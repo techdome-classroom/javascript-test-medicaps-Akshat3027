@@ -3,7 +3,6 @@ function smallestMissingPositiveInteger(nums) {
       return 1;
   }
   
-  // Remove non-positive integers and duplicates
   nums = Array.from(new Set(nums.filter(x => x > 0)));
   
   let smallestPositive = 1;

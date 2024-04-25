@@ -1,7 +1,17 @@
 function smallestMissingPositiveInteger(nums) {
-
-  // Implement the function smallest_missing_positive_integer
-
+  if (nums.length === 0) {
+      return 1;
+  }
+  
+  // Remove non-positive integers and duplicates
+  nums = Array.from(new Set(nums.filter(x => x > 0)));
+  
+  // Find the smallest missing positive integer
+  let smallestPositive = 1;
+  while (nums.includes(smallestPositive)) {
+      smallestPositive++;
+  }
+  
+  return smallestPositive;
 }
-
 module.exports = smallestMissingPositiveInteger;
